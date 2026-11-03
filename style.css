@@ -1,0 +1,235 @@
+html {
+    html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+}
+
+section {
+    scroll-margin-top: 80px;
+}
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+
+/* =========================================
+        BASIC ANIMATIONS
+========================================= */
+
+@keyframes slideLeft {
+
+    from {
+        opacity: 0;
+        transform: translateX(-80px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+}
+
+
+@keyframes slideRight {
+
+    from {
+        opacity: 0;
+        transform: translateX(80px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+}
+
+
+@keyframes fadeUp {
+
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+@keyframes floating {
+
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+
+}
+
+
+.slide-left {
+    animation: slideLeft 1s ease-out forwards;
+}
+
+.slide-right {
+    animation: slideRight 1s ease-out forwards;
+}
+
+.fade-up {
+    animation: fadeUp 1s ease-out forwards;
+}
+
+.floating {
+    animation: floating 4s ease-in-out infinite;
+}
+
+
+/* =========================================
+        SCROLL REVEAL
+========================================= */
+
+.reveal,
+.reveal-left,
+.reveal-right {
+
+    opacity: 0;
+
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+
+}
+
+.reveal {
+    transform: translateY(50px);
+}
+
+.reveal-left {
+    transform: translateX(-70px);
+}
+
+.reveal-right {
+    transform: translateX(70px);
+}
+
+.reveal.show,
+.reveal-left.show,
+.reveal-right.show {
+
+    opacity: 1;
+    transform: translate(0);
+
+}
+
+
+/* =========================================
+        GLOW
+========================================= */
+
+.glow {
+
+    box-shadow:
+        0 0 25px rgba(201, 143, 158, 0.25);
+
+}
+
+
+/* =========================================
+        GRADIENT TEXT
+========================================= */
+
+.gradient-text {
+
+    background: linear-gradient(
+        90deg,
+        #f9a8d4,
+        #C98F9E
+    );
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+}
+
+
+/* =========================================
+        SKILL BAR
+========================================= */
+
+.skill-bar {
+
+    box-shadow:
+        0 0 12px rgba(236, 72, 153, 0.45);
+
+}
+
+
+/* =========================================
+        NAVBAR
+========================================= */
+
+.nav-link {
+    position: relative;
+}
+
+.nav-link::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: -6px;
+
+    width: 0;
+    height: 2px;
+
+    background: #ec4899;
+
+    transition: width 0.3s ease;
+
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+
+/* =========================================
+        MOBILE MENU
+========================================= */
+
+#mobileMenu {
+
+    animation:
+        mobileMenuOpen 0.3s ease;
+
+}
+
+
+@keyframes mobileMenuOpen {
+
+    from {
+
+        opacity: 0;
+        transform: translateY(-10px);
+
+    }
+
+    to {
+
+        opacity: 1;
+        transform: translateY(0);
+
+    }
+
+}
